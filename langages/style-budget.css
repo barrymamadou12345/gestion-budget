@@ -24,6 +24,9 @@
   .rio{
     width: 100%;
   }
+  #reponse{
+    color: red;
+  }
   .div1{
     width: 100%;
     display: flex;
@@ -61,7 +64,7 @@
     align-items: center;
     box-shadow: 0px 5px 10px 0px #692525;
     width: 35%;
-    height: 300px;
+    height: 350px;
   }
   #solde h1 {
     color: rgb(15, 67, 18);
