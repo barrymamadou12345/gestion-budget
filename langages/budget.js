@@ -94,7 +94,7 @@ function calcul() {
     }
   })
   if(retirer > SOMME) {
-    console.log(`Votre Solde est de : ${SOMME}FCFA !
+    alert(`Votre Solde est de : ${SOMME}FCFA !
     Vous ne Pouvez pas Retirer une Somme de ${retirer} qui est Superieur à Votre Solde `); 
   }
 };
