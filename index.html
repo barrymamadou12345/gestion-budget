@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./langages/style-budget.css">
+    <script src="https://kit.fontawesome.com/7019415cd8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title></title>
+    <!-- ++++++++++ AOS ANIMATION +++++++++ -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- ++++++++++ AOS ANIMATION +++++++++ -->
+  </head>
+  <body>
+
+    <section class="secto1 d-md-flex pe-5">
+      <div class="container mb-5 global1">
+        <h1 class=" fs-6 text-center m-3"> GESTION DE BIDGET</h1>
+
+          <div class=" rio m-auto">
+            <form action="" method="post" id="userForm" class=" form1 py-2">
+              <div class="div1">
+                <div class="left">
+                  <label for="prenom">Prenom</label>
+                  <input required type="text" name="prenom" id="prenom" class="form-control">
+                </div>
+
+                <div class="right">
+                  <label for="nom">Nom</label>
+                  <input required type="text" name="nom" id="nom" class="form-control">
+                </div>
+              </div>
+
+              <div class="div1 my-3">
+                <div class="left">
+                  <label for="somme">Somme</label>
+                  <input required type="text" name="somme" id="somme" class="form-control">
+                  <small id="ttt"></small>
+                </div>
+
+                <div class="right">
+                  <label for="time">Date / Heure</label>
+                  <input required type="text" name="time" id="time" class="form-control">
+                </div>
+              </div>
+
+              <div class="typo my-3">
+                <label for="transfert"> TypeTransaction : </label>
+                <select name="pets" id="transfert" class="choix rounded-3 py-2 w-100 mt-2">
+                  <option value="Dépot">Dépot</option>
+                  <option value="Retrait">Retrait</option>
+                </select>
+              </div>
+
+              <div class="bouton">
+                <button type="submit" id="addUser"></button>
+              </div>
+            </form>
+          </div>
+      </div>
+      <!-- Affichage de la Somme -->
+
+      <div id="solde" class=" me-4 mt-5 d-flex justify-content-center">
+        <div>
+          <h1>Votre Solde est de :</h1>
+          <div class="d-flex justify-content-center align-items-center mt-4">
+            <div id="money" class="money"></div>
+            <p class="fs-3 fw-bold text-danger ms-3">FCFA</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="sec2">
+      <div class=" global2">
+        <h1 class="fs-6 text-center mt-4">Utilisateurs</h1>
+        <div class="resultats">
+          
+          <table class="table table-striped" >
+              <thead class="bordure">
+                <tr id="tr1" class="tr1 border">
+                  <th class="th1 ps-2">Prenom</th>
+                   <th class="th2">Nom</th>
+                   <th class="th3">Somme</th>
+                   <th class="th4">Date / Heure</th>
+                   <th class="th6">Type de Transaction</th>
+                   <th class="th5 pe-2">Actions</th>
+                 </tr>
+              </thead>
+              <tbody id="userList">
+                <!-- LISTE DES UTILISATEURS -->
+              </tbody>
+            </table>
+        </div>
+      </div> 
+    </section>
+
+
+
+
+
+    <!--===========================================SCRIPTES============================================================================-->
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        </script>
+  
+        <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+        </script>
+        <script src="./langages/budget.js"></script>
+        <!-- ++++++++++ AOS ANIMATION +++++++++ -->
+          <script>
+              AOS.init();
+          </script>
+        <!-- ++++++++++ AOS ANIMATION +++++++++ -->
+  </body>
+</html>

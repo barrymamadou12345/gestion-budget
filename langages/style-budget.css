@@ -1,0 +1,155 @@
+
+.form1{
+    box-shadow: 0px 5px 10px 0px #cfcece;
+  }
+  *{
+    font-size: 16px;
+  }
+  .btnr1, .btnr2{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 7px;
+  }
+  .btnr1{
+    background-color: rgb(3, 133, 83);
+    color: #fff;
+  }
+  .btnr2{
+    background-color: rgb(253, 193, 28);
+  }
+  .rio{
+    width: 100%;
+  }
+  .div1{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .left, .right{
+    width: 45%;
+  }
+  .left input, .right input{
+    height: 40px;
+    margin-top: 5px;
+  }
+  label{
+    font-size: 17px;
+  }
+  .bouton{
+    width: 95%;
+    margin: auto;
+  }
+  .typo{
+    width: 95%;
+    margin: auto;
+  }
+  .choix{
+    border: 1px solid rgba(128, 128, 128, 0.457);
+  }
+  .global1{
+    width: 40%;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #44444473; 
+  }
+  #solde{
+    background-color: rgba(105, 104, 104, 0.263);
+    border-radius: 15px;
+    align-items: center;
+    box-shadow: 0px 5px 10px 0px #692525;
+    width: 35%;
+    height: 300px;
+  }
+  #solde h1 {
+    color: rgb(15, 67, 18);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .money{
+    font-size: 70px;
+    color: rgb(13, 13, 69);
+    font-weight: bold;
+    text-shadow: 3px 2px 1px #ffffff;
+    font-family:  Tahoma;
+
+  }
+  .global2{
+    width: 80%;
+    margin: auto;
+  }
+  .resultats{
+    height: 40px;
+  }
+  .tr1 {
+    height: 35px;
+    align-items: center;
+  }
+  .tr1 th {
+    border-bottom: 2px solid rgb(9, 9, 9);
+  }
+  .bordure{
+    border-bottom: 2px solid rgba(255, 0, 0, 0);
+  }
+
+  .style button{
+    width: 100px;
+    border: none;
+    height: 38px;
+    border-radius: 5px;
+    background-color: rgb(253, 193, 28);
+  }
+  .style .bouton2{
+    font-weight: 500;
+    width: 100px;
+    border: none;
+    background-color: rgb(250, 45, 45);
+    color: #fff;
+    border-radius: 5px;
+    height: 38px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 8px;
+    cursor: pointer;
+  }
+  .sec2{ 
+    overflow: scroll;
+    min-height: 300px;
+  }
+  
+  /* ===============Tableau Media Queries ================*/
+  
+  @media screen and (max-width:991px) {
+    .rio{
+      width: 86%;
+    }
+    .sec2{
+      min-height: 250px;
+    }    .global1{
+      width: 65%;
+    }
+  }
+  
+  @media screen and (max-width:768px) {
+    .global1{
+      width: 95%;
+    }.global2{
+      width: 95%;
+    }
+    .rio{
+      width: 97%;
+    }
+    .left, .right{
+      width: 95%;
+      margin: auto;
+    }
+    .left input, .right input{
+      margin-bottom: 6px;
+    }
+    .div1{
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+  
