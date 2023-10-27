@@ -35,6 +35,9 @@
     background-color: red;
     font-size: 40px;
   }
+  .cfa{
+    display: none;
+  }
   .div1{
     width: 100%;
     display: flex;

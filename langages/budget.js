@@ -77,7 +77,7 @@ function affichageUser() { //Afficher la liste des utilisateurs
 
 let logique ; 
 let argent ;
-let retirer ;
+let retire ;
 
 function calcul() {
   logique = bidget.filter((a) => { // Mon calcule
@@ -89,25 +89,38 @@ function calcul() {
   })
   let traite = bidget.filter((a) => a.transfert === 'Retrait')
   console.table(traite);
-  let amon =[0,0];
+  let tabRetrait =[0,0];
   traite.filter((a) =>{
-    amon.push(parseInt(a.somme))
+    tabRetrait.push(parseInt(a.somme))
   })
-  console.log( "le amon = " ,amon);
-  let loum ;
-if (amon != []) {
-    loum = amon.reduce((a,b) => a + b)
-    console.log(loum);
-  }
-  SOMME -= loum ;
-  if(loum > SOMME) {
-    document.querySelector('#reponse').textContent =`
-    Vous ne Pouvez pas Retirer une Somme de < ${loum} > qui est Superieur à Votre Solde !`; 
-    SOMME = argent ;
-    document.querySelector('#kiloo').style.display = 'block';
+  console.log( "le tabRetrait = " ,tabRetrait);
+  if (tabRetrait != []) {
+    retire = tabRetrait.reduce((a,b) => a + b)
+    if(SOMME == ""){
+      document.querySelector('#cfa').classList.add('cfa');
+      document.querySelector('#h1').classList.add('cfa');
+    }
+    if (SOMME >= retire) {
+      SOMME -= retire ;
+    }
+    else {
+      document.querySelector('#reponse').textContent =`
+      Impossible de Retirer ${retire} Vore Solde est Insuffisant !`; 
+      SOMME = argent ;
+      document.querySelector('#kiloo').style.display = 'block';
+    }
   }
 };
 calcul();
+
+/*
+      document.querySelector('#reponse').textContent =`
+      Vous ne Pouvez pas Retirer une Somme de  ${retire}   qui est Superieur à Votre Solde !`; 
+      SOMME = argent ;
+      document.querySelector('#kiloo').style.display = 'block';
+      document.querySelector('#cfa').classList.add('cfa');
+      document.querySelector('#money').textContent = `${SOMME} F` ;
+*/
 
 document.querySelector('#money').textContent = SOMME ;
 console.log('Mon Compteur = ', SOMME);
