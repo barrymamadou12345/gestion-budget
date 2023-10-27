@@ -1,6 +1,18 @@
 
 .form1{
-    box-shadow: 0px 5px 10px 0px #cfcece;
+    box-shadow: 0px 5px 10px 0px #1e0e5a;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  .form1 input{
+    border: 1px solid #1e0e5a;
+  }
+  .form1 label{
+    color:#1e0e5a;
+    font-weight: bold;
+  }
+  .ret {
+    color: red;
   }
   *{
     font-size: 16px;
@@ -15,11 +27,12 @@
     border-radius: 7px;
   }
   .btnr1{
-    background-color: rgb(3, 133, 83);
+    background-color: rgba(13, 13, 69, 0.89);
     color: #fff;
   }
   .btnr2{
-    background-color: rgb(253, 193, 28);
+    background-color: rgb(135, 14, 215);
+    color: #fff;
   }
   .rio{
     width: 100%;
@@ -62,18 +75,18 @@
     margin: auto;
   }
   .choix{
-    border: 1px solid rgba(128, 128, 128, 0.457);
+    border: 1px solid #1e0e5a;
   }
   .global1{
     width: 40%;
     padding-bottom: 60px;
-    border-bottom: 1px solid #44444473; 
+
   }
   #solde{
     background-color: rgba(105, 104, 104, 0.263);
     border-radius: 15px;
     align-items: center;
-    box-shadow: 0px 5px 10px 0px #692525;
+    box-shadow: 0px 5px 10px 0px #1e0e5a;
     width: 35%;
     height: 350px;
   }
@@ -112,7 +125,8 @@
     border: none;
     height: 38px;
     border-radius: 5px;
-    background-color: rgb(253, 193, 28);
+    background-color: rgb(135, 14, 215);
+    color: white;
   }
   .style .bouton2{
     font-weight: 500;
