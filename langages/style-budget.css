@@ -27,6 +27,14 @@
   #reponse{
     color: red;
   }
+  .kiloo{
+    display: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: red;
+    font-size: 40px;
+  }
   .div1{
     width: 100%;
     display: flex;

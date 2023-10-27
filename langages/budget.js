@@ -85,18 +85,26 @@ function calcul() {
     if (hey === 'Dépot') {
       argent = parseInt(a.somme)
       SOMME += argent
-      return argent
-    }if (hey === 'Retrait') {
-      retirer = parseInt(a.somme)
-      if (SOMME >= retirer ) {  
-        retirer -= SOMME
-      } 
     }
   })
-  if(retirer > SOMME) {
+  let traite = bidget.filter((a) => a.transfert === 'Retrait')
+  console.table(traite);
+  let amon =[0,0];
+  traite.filter((a) =>{
+    amon.push(parseInt(a.somme))
+  })
+  console.log( "le amon = " ,amon);
+  let loum ;
+if (amon != []) {
+    loum = amon.reduce((a,b) => a + b)
+    console.log(loum);
+  }
+  SOMME -= loum ;
+  if(loum > SOMME) {
     document.querySelector('#reponse').textContent =`
-    Votre Solde est de : ${SOMME} FCFA !
-    Vous ne Pouvez pas Retirer une Somme de ${retirer} qui est Superieur à Votre Solde `; 
+    Vous ne Pouvez pas Retirer une Somme de < ${loum} > qui est Superieur à Votre Solde !`; 
+    SOMME = argent ;
+    document.querySelector('#kiloo').style.display = 'block';
   }
 };
 calcul();
