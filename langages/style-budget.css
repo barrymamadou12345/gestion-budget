@@ -26,6 +26,27 @@
     border: none;
     border-radius: 7px;
   }
+
+  .barro{
+    width: 300px ;
+    height: 45px;
+    background-color: #1f0e5a3d;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+  }
+  .barro:hover{
+    border: 2px solid #1e0e5a;
+  }
+  .barro input{
+    border: none;
+    width: 88%;
+    background-color: #1f0e5a04;
+  }
+  .barro input:focus{
+    outline: none;
+
+  }
   .btnr1{
     background-color: rgba(13, 13, 69, 0.89);
     color: #fff;
@@ -100,7 +121,9 @@
     font-weight: bold;
     text-shadow: 3px 2px 1px #ffffff;
     font-family:  Tahoma;
-
+  }
+  .melo{
+    color: red;
   }
   .global2{
     width: 80%;
@@ -117,10 +140,10 @@
     border-bottom: 2px solid rgb(9, 9, 9);
   }
   .bordure{
-    border-bottom: 2px solid rgba(255, 0, 0, 0);
+    border-bottom: 2px solid rgb(0, 0, 0);
   }
 
-  .style button{
+ button{
     width: 100px;
     border: none;
     height: 38px;
@@ -128,7 +151,7 @@
     background-color: rgb(135, 14, 215);
     color: white;
   }
-  .style .bouton2{
+ .bouton2{
     font-weight: 500;
     width: 100px;
     border: none;

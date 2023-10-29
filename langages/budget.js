@@ -1,3 +1,6 @@
+
+// nouveau 0
+
 /* Exercice React-Js !
   Des Recherches sur des conceptes :
   Composants Reutilisables ,
@@ -56,25 +59,12 @@ function resetForm() { //Effacer le Formulaire
 function affichageUser() { //Afficher la liste des utilisateurs
   userList.innerHTML = "";
   
-  bidget.forEach((user, index) => {
-    listItem = document.createElement('tr');
-    nom1 = ` ${user.prenom}`;
-    nom2 = ` ${user.nom}`;
-    nom3 = ` ${user.somme}`;
-    nom4 = ` ${user.time}`;
-    nom7 = ` ${user.transfert}`;
+  bidget.forEach((index) => {
     nom5 = `<td> <button onclick="editUser(${index})">Modifier</button> </td> `;
     nom6 = `<td>  <div class="bouton2" onclick="deleteUser(${index})">Supprimer</div> </td> `;
-    listItem.innerHTML = ` 
-    <td class="prenom">${nom1}</td> <td class="nom">${nom2}</td> <td class="somme">${nom3}</td> 
-    <td class="time">${nom4}</td> <td id="transfert2">${nom7}</td> ${nom5} ${nom6}`;
-
-    listItem.classList.add('style');
-    userList.appendChild(listItem);
     localStorage.setItem('moyen', JSON.stringify(bidget));// localStorage
   });
 }
-
 let logique ; 
 let argent ;
 let retire ;
@@ -88,15 +78,13 @@ function calcul() {
     }
   })
   let traite = bidget.filter((a) => a.transfert === 'Retrait')
-  console.table(traite);
   let tabRetrait =[0,0];
   traite.filter((a) =>{
     tabRetrait.push(parseInt(a.somme))
   })
-  console.log( "le tabRetrait = " ,tabRetrait);
   if (tabRetrait != []) {
     retire = tabRetrait.reduce((a,b) => a + b)
-    if(SOMME == ""){
+    if(SOMME === ""){
       document.querySelector('#cfa').classList.add('cfa');
       document.querySelector('#h1').classList.add('cfa');
     }
@@ -112,22 +100,9 @@ function calcul() {
   }
 };
 calcul();
-
-/*
-      document.querySelector('#reponse').textContent =`
-      Vous ne Pouvez pas Retirer une Somme de  ${retire}   qui est Superieur à Votre Solde !`; 
-      SOMME = argent ;
-      document.querySelector('#kiloo').style.display = 'block';
-      document.querySelector('#cfa').classList.add('cfa');
-      document.querySelector('#money').textContent = `${SOMME} F` ;
-*/
-
 document.querySelector('#money').textContent = SOMME ;
-console.log('Mon Compteur = ', SOMME);
-
 bidget.forEach(() => {
   affichageUser();
- // calcul()
   localStorage.setItem('moyen', JSON.stringify(bidget));// localStorage
 });
 
@@ -138,7 +113,6 @@ function saveUser(event) { //Ajouter un utilisateur
   const somme = document.querySelector("#somme").value;
   const time = document.querySelector("#time").value;
   let transfert = document.querySelector("#transfert").value;
-
   if(modifUser !== "") {
     bidget[modifUser] = createUser(prenom, nom, somme, time, transfert);
     modifUser = "";
@@ -176,3 +150,81 @@ function deleteUser(index) {//Supprimer un Utilisateur
   location.reload();
   calcul()
 }
+
+// Debut Recherche tableau //////////
+function genererTableau(utilisateurs) {
+  const table = document.getElementById('userList');
+  table.innerHTML = '';
+  
+  utilisateurs.forEach((utilisateur, index) => {
+    const row = table.insertRow();
+    const cellPrenom = row.insertCell(0);
+    const cellNom = row.insertCell(1);
+    const cellSomme = row.insertCell(2);
+    const cellDate = row.insertCell(3);
+    const cellType = row.insertCell(4);
+    const cellModif = row.insertCell(5);
+    const cellSupr = row.insertCell(6);
+    
+    cellPrenom.innerHTML = utilisateur.prenom;
+    cellNom.innerHTML = utilisateur.nom;
+    cellSomme.innerHTML = utilisateur.somme;
+    cellDate.innerHTML = utilisateur.time;
+    cellType.innerHTML = utilisateur.transfert;
+    nom5 = `<td> <button onclick="editUser(${index})">Modifier</button> </td> `;
+    nom6 = `<td>  <div class="bouton2" onclick="deleteUser(${index})">Supprimer</div> </td> `;
+    cellModif.innerHTML = nom5;
+    cellSupr.innerHTML = nom6;
+  });
+}
+
+// Fonction pour filtrer les utilisateurs en fonction de la recherche
+function filtrerUtilisateurs(recherche) {
+  const resultatFiltre = bidget.filter((a) =>
+    a.prenom.toLowerCase().includes(recherche.toLowerCase())
+  );
+  genererTableau(resultatFiltre);
+}
+
+function init() {
+  const rechercher = document.getElementById('rechercher');
+  rechercher.addEventListener('input', () => {
+    filtrerUtilisateurs(rechercher.value);
+  });
+  genererTableau(bidget);
+}
+// Appel de la fonction d'initialisation au chargement de la page
+window.onload = init;
+
+
+
+
+
+
+
+
+
+
+/*
+
+function genererUtilisateurs1(nbUtilisateurs1) {
+  const utilisateurs1 = [];
+  const noms = ['John', 'Jane', 'Michael', 'Emily', 'David', 'Sarah', 'James', 'Olivia', 'Daniel', 'Sophia'];
+  const prenoms = ['Smith', 'Johnson', 'Brown', 'Taylor', 'Miller', 'Anderson', 'Williams', 'Jones', 'Clark', 'White'];
+
+  for (let i = 0; i < nbUtilisateurs1; i++) {
+      const nom = noms[Math.floor(Math.random() * noms.length)];
+      const prenom = prenoms[Math.floor(Math.random() * prenoms.length)];
+      const age = Math.floor(Math.random() * 40) + 18; // Génère un âge entre 18 et 57
+
+      utilisateurs1.push({ nom, prenom, age });
+  }
+
+  return utilisateurs1;
+}
+
+const utilisateurs1 = genererUtilisateurs1(1000);
+
+// Pour afficher les utilisateurs1 dans la console
+console.table(utilisateurs1);
+*/
