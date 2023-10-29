@@ -144,7 +144,7 @@
   }
 
  button{
-    width: 100px;
+    width: 40px;
     border: none;
     height: 38px;
     border-radius: 5px;
@@ -152,16 +152,17 @@
     color: white;
   }
  .bouton2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
     font-weight: 500;
-    width: 100px;
+    width: 40px;
     border: none;
     background-color: rgb(250, 45, 45);
     color: #fff;
     border-radius: 5px;
     height: 38px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 8px;
+
     cursor: pointer;
   }
   /* .sec2{ 

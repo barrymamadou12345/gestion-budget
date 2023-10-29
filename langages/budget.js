@@ -60,8 +60,8 @@ function affichageUser() { //Afficher la liste des utilisateurs
   userList.innerHTML = "";
   
   bidget.forEach((index) => {
-    nom5 = `<td> <button onclick="editUser(${index})">Modifier</button> </td> `;
-    nom6 = `<td>  <div class="bouton2" onclick="deleteUser(${index})">Supprimer</div> </td> `;
+    nom5 = `<td> <button onclick="editUser(${index})"><i class="fa-solid fa-pen-to-square"></i></button> </td> `;
+    nom6 = `<td>  <div class="bouton2" onclick="deleteUser(${index})"><i class="fa-solid fa-trash-can"></i></div> </td> `;
     localStorage.setItem('moyen', JSON.stringify(bidget));// localStorage
   });
 }
@@ -171,8 +171,8 @@ function genererTableau(utilisateurs) {
     cellSomme.innerHTML = utilisateur.somme;
     cellDate.innerHTML = utilisateur.time;
     cellType.innerHTML = utilisateur.transfert;
-    nom5 = `<td> <button onclick="editUser(${index})">Modifier</button> </td> `;
-    nom6 = `<td>  <div class="bouton2" onclick="deleteUser(${index})">Supprimer</div> </td> `;
+    nom5 = `<td> <button onclick="editUser(${index})"><i class="fa-solid fa-pen-to-square"></i></button> </td> `;
+    nom6 = `<td>  <div class="bouton2" onclick="deleteUser(${index})"><i class="fa-solid fa-trash-can"></i></div> </td> `;
     cellModif.innerHTML = nom5;
     cellSupr.innerHTML = nom6;
   });
