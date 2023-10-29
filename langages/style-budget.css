@@ -164,15 +164,18 @@
     padding-top: 8px;
     cursor: pointer;
   }
-  .sec2{ 
+  /* .sec2{ 
     overflow: scroll;
     min-height: 300px;
-  }
+  } */
   
   /* ===============Tableau Media Queries ================*/
   
   @media screen and (max-width:991px) {
     .rio{
+      width: 86%;
+    }
+    #solde{
       width: 86%;
     }
     .sec2{
@@ -183,6 +186,12 @@
   }
   
   @media screen and (max-width:768px) {
+    #solde{
+      width: 88%;
+      margin-left: 30px;
+      margin-bottom: 50px;
+      height: 350px;
+    }
     .global1{
       width: 95%;
     }.global2{
