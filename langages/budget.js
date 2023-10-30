@@ -197,34 +197,3 @@ function init() {
 window.onload = init;
 
 
-
-
-
-
-
-
-
-
-/*
-
-function genererUtilisateurs1(nbUtilisateurs1) {
-  const utilisateurs1 = [];
-  const noms = ['John', 'Jane', 'Michael', 'Emily', 'David', 'Sarah', 'James', 'Olivia', 'Daniel', 'Sophia'];
-  const prenoms = ['Smith', 'Johnson', 'Brown', 'Taylor', 'Miller', 'Anderson', 'Williams', 'Jones', 'Clark', 'White'];
-
-  for (let i = 0; i < nbUtilisateurs1; i++) {
-      const nom = noms[Math.floor(Math.random() * noms.length)];
-      const prenom = prenoms[Math.floor(Math.random() * prenoms.length)];
-      const age = Math.floor(Math.random() * 40) + 18; // Génère un âge entre 18 et 57
-
-      utilisateurs1.push({ nom, prenom, age });
-  }
-
-  return utilisateurs1;
-}
-
-const utilisateurs1 = genererUtilisateurs1(1000);
-
-// Pour afficher les utilisateurs1 dans la console
-console.table(utilisateurs1);
-*/
