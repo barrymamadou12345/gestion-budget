@@ -4,6 +4,12 @@
     border-radius: 10px;
     padding: 10px;
   }
+  .secto1{
+    background-color: rgba(86, 85, 83, 0.447);
+    margin-bottom: 40px;
+    border-bottom-left-radius:25px ;
+    border-bottom-right-radius:25px ;
+  }
   .form1 input{
     border: 1px solid #1e0e5a;
   }
