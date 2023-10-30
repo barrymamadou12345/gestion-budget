@@ -13,19 +13,19 @@
 *//////////////
 
 ////////////////////////////////////////////
-  /* Faire une application de gestion de Budjet ;
-    Prenom, Nom, Somme, date et heure, type de transaction (dépot ou retrait)
-   l'utilisateur définit le budget dans un formulaire.
-    Afficher le budget dans un tableau.
-    Depot ajoute , Retrait Soustrait ;
-    lister tous les transactions 
-    Récupérer la date et l'heure
-    Recherche en temps reel (LES NOMS)
-    Plus de 5 elements on fait la  Pagination !
-    Afficher sous forme de card le budget total.
-    --------------Déployer--------
-    Charte Js 
-  */
+/* Faire une application de gestion de Budjet ;
+  Prenom, Nom, Somme, date et heure, type de transaction (dépot ou retrait)
+ l'utilisateur définit le budget dans un formulaire.
+  Afficher le budget dans un tableau.
+  Depot ajoute , Retrait Soustrait ;
+  lister tous les transactions 
+  Récupérer la date et l'heure
+  Recherche en temps reel (LES NOMS)
+  Plus de 5 elements on fait la  Pagination !
+  Afficher sous forme de card le budget total.
+  --------------Déployer--------
+  Charte Js 
+*/
 ///////////////////////////////////////
 
 
@@ -37,14 +37,14 @@ let modifUser = "";
 addUser.classList.remove('btnr2');
 addUser.textContent = 'Executer';
 addUser.classList.add('btnr1');
-let nom1 ;
-let nom2 ;
-let nom3 ;
-let nom4 ;
-let nom5 ;
-let nom6 ;
-let nom7 ;
-let SOMME = 0 ;// mon Compteur
+let nom1;
+let nom2;
+let nom3;
+let nom4;
+let nom5;
+let nom6;
+let nom7;
+let SOMME = 0;// mon Compteur
 
 let bidget = JSON.parse(localStorage.getItem('moyen')) || []; //TableauBidget .
 
@@ -58,49 +58,49 @@ function resetForm() { //Effacer le Formulaire
 
 function affichageUser() { //Afficher la liste des utilisateurs
   userList.innerHTML = "";
-  
+
   bidget.forEach((index) => {
     nom5 = `<td> <button onclick="editUser(${index})"><i class="fa-solid fa-pen-to-square"></i></button> </td> `;
     nom6 = `<td>  <div class="bouton2" onclick="deleteUser(${index})"><i class="fa-solid fa-trash-can"></i></div> </td> `;
     localStorage.setItem('moyen', JSON.stringify(bidget));// localStorage
   });
 }
-let logique ; 
-let argent ;
-let retire ;
+let logique;
+let argent;
+let retire;
 
 function calcul() {
   logique = bidget.filter((a) => { // Mon calcule
-    let hey = a.transfert ;
+    let hey = a.transfert;
     if (hey === 'Dépot') {
       argent = parseInt(a.somme)
       SOMME += argent
     }
   })
   let traite = bidget.filter((a) => a.transfert === 'Retrait')
-  let tabRetrait =[0,0];
-  traite.filter((a) =>{
+  let tabRetrait = [0, 0];
+  traite.filter((a) => {
     tabRetrait.push(parseInt(a.somme))
   })
   if (tabRetrait != []) {
-    retire = tabRetrait.reduce((a,b) => a + b)
-    if(SOMME === ""){
+    retire = tabRetrait.reduce((a, b) => a + b)
+    if (SOMME === "") {
       document.querySelector('#cfa').classList.add('cfa');
       document.querySelector('#h1').classList.add('cfa');
     }
     if (SOMME >= retire) {
-      SOMME -= retire ;
+      SOMME -= retire;
     }
     else {
-      document.querySelector('#reponse').textContent =`
-      Impossible de Retirer ${retire} Vore Solde est Insuffisant !`; 
-      SOMME = argent ;
+      document.querySelector('#reponse').textContent = `
+      Impossible de Retirer ${retire} Vore Solde est Insuffisant !`;
+      SOMME = argent;
       document.querySelector('#kiloo').style.display = 'block';
     }
   }
 };
 calcul();
-document.querySelector('#money').textContent = SOMME ;
+document.querySelector('#money').textContent = SOMME;
 bidget.forEach(() => {
   affichageUser();
   localStorage.setItem('moyen', JSON.stringify(bidget));// localStorage
@@ -113,10 +113,10 @@ function saveUser(event) { //Ajouter un utilisateur
   const somme = document.querySelector("#somme").value;
   const time = document.querySelector("#time").value;
   let transfert = document.querySelector("#transfert").value;
-  if(modifUser !== "") {
+  if (modifUser !== "") {
     bidget[modifUser] = createUser(prenom, nom, somme, time, transfert);
     modifUser = "";
-  }else {
+  } else {
     bidget.unshift(createUser(prenom, nom, somme, time, transfert));
   }
   calcul();
@@ -129,7 +129,7 @@ function saveUser(event) { //Ajouter un utilisateur
 }
 // Ecouter le Click sur le boutton Ajouter
 userForm.addEventListener("submit", saveUser);
-  
+
 function editUser(modifier) { //Modifier un Utilisateur
   addUser.classList.remove('btnr1');
   addUser.textContent = 'Modifier';
@@ -155,7 +155,7 @@ function deleteUser(index) {//Supprimer un Utilisateur
 function genererTableau(utilisateurs) {
   const table = document.getElementById('userList');
   table.innerHTML = '';
-  
+
   utilisateurs.forEach((utilisateur, index) => {
     const row = table.insertRow();
     const cellPrenom = row.insertCell(0);
@@ -165,7 +165,7 @@ function genererTableau(utilisateurs) {
     const cellType = row.insertCell(4);
     const cellModif = row.insertCell(5);
     const cellSupr = row.insertCell(6);
-    
+
     cellPrenom.innerHTML = utilisateur.prenom;
     cellNom.innerHTML = utilisateur.nom;
     cellSomme.innerHTML = utilisateur.somme;
