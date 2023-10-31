@@ -151,12 +151,18 @@ function deleteUser(index) {//Supprimer un Utilisateur
   calcul()
 }
 
-// Debut Recherche tableau //////////
+let pageActuelle = 1;
+document.getElementById('pageActuelle').textContent = pageActuelle;
+const elementsParPage = 4;
+
 function genererTableau(utilisateurs) {
   const table = document.getElementById('userList');
   table.innerHTML = '';
 
-  utilisateurs.forEach((utilisateur, index) => {
+  let debutIndex = (pageActuelle - 1) * elementsParPage;
+  let finIndex = debutIndex + elementsParPage;
+
+  utilisateurs.slice(debutIndex, finIndex).forEach((utilisateur, index) => {
     const row = table.insertRow();
     const cellPrenom = row.insertCell(0);
     const cellNom = row.insertCell(1);
@@ -178,6 +184,37 @@ function genererTableau(utilisateurs) {
   });
 }
 
+const boutonPrecedent = document.getElementById('boutonPrecedent');
+const boutonSuivant = document.getElementById('boutonSuivant');
+
+boutonPrecedent.addEventListener('click', () => {
+  if (pageActuelle > 1) {
+    pageActuelle -= 1;
+    document.getElementById('pageActuelle').textContent = pageActuelle;
+    genererTableau(bidget);
+  }
+});
+
+boutonSuivant.addEventListener('click', () => {
+  const totalPages = Math.ceil(bidget.length / elementsParPage);
+  if (pageActuelle < totalPages) {
+    pageActuelle += 1;
+    document.getElementById('pageActuelle').textContent = pageActuelle;
+    genererTableau(bidget);
+  }
+});
+
+function init() {
+  const rechercher = document.getElementById('rechercher');
+  rechercher.addEventListener('input', () => {
+    filtrerUtilisateurs(rechercher.value);
+  });
+  const totalPages = Math.ceil(bidget.length / elementsParPage);
+  document.getElementById('totalPages').textContent = totalPages;
+  genererTableau(bidget);
+}
+
+
 // Fonction pour filtrer les utilisateurs en fonction de la recherche
 function filtrerUtilisateurs(recherche) {
   const resultatFiltre = bidget.filter((a) =>
@@ -186,13 +223,6 @@ function filtrerUtilisateurs(recherche) {
   genererTableau(resultatFiltre);
 }
 
-function init() {
-  const rechercher = document.getElementById('rechercher');
-  rechercher.addEventListener('input', () => {
-    filtrerUtilisateurs(rechercher.value);
-  });
-  genererTableau(bidget);
-}
 // Appel de la fonction d'initialisation au chargement de la page
 window.onload = init;
 

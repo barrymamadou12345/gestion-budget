@@ -1,222 +1,299 @@
+.form1 {
+  box-shadow: 0px 5px 10px 0px #1e0e5a;
+  border-radius: 10px;
+  padding: 10px;
+}
 
-.form1{
-    box-shadow: 0px 5px 10px 0px #1e0e5a;
-    border-radius: 10px;
-    padding: 10px;
-  }
-  .secto1{
-    background-color: rgba(86, 85, 83, 0.447);
-    margin-bottom: 40px;
-    border-bottom-left-radius:25px ;
-    border-bottom-right-radius:25px ;
-  }
-  .form1 input{
-    border: 1px solid #1e0e5a;
-  }
-  .form1 label{
-    color:#1e0e5a;
-    font-weight: bold;
-  }
-  .ret {
-    color: red;
-  }
-  *{
-    font-size: 16px;
-  }
-  .btnr1, .btnr2{
-    width: 100%;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    border-radius: 7px;
-  }
+.secto1 {
+  background-color: rgba(86, 85, 83, 0.447);
+  margin-bottom: 40px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
 
-  .barro{
-    width: 300px ;
-    height: 45px;
-    background-color: #1f0e5a3d;
-    display: flex;
-    align-items: center;
-    border-radius: 15px;
-  }
-  .barro:hover{
-    border: 2px solid #1e0e5a;
-  }
-  .barro input{
-    border: none;
-    width: 88%;
-    background-color: #1f0e5a04;
-  }
-  .barro input:focus{
-    outline: none;
+#pageActuelle,
+#totalPages {
+  width: 45px;
+  height: 45px;
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 25px;
+  font-weight: bold;
+}
+#pageActuelle{
+  background-color: #260d8198;
+  color: rgb(255, 255, 255);
+}
+#totalPages {
+  background-color: rgba(128, 0, 109, 0.598);
+  color: #fff;
+}
+.mom{
+  background-color: #797294db;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+}
+.mom:hover{
+  background-color: #443093db;
+}
+.monom .ha{
+  color: rgb(20, 3, 132);
+  font-size: 19px;
+}
+.monom .hb{
+  color: rgba(128, 0, 109, 0.92);
+  font-size: 19px;
+}
+.form1 input {
+  border: 1px solid #1e0e5a;
+}
 
-  }
-  .btnr1{
-    background-color: rgba(13, 13, 69, 0.89);
-    color: #fff;
-  }
-  .btnr2{
-    background-color: rgb(135, 14, 215);
-    color: #fff;
-  }
-  .rio{
-    width: 100%;
-  }
-  #reponse{
-    color: red;
-  }
-  .kiloo{
-    display: none;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: red;
-    font-size: 40px;
-  }
-  .cfa{
-    display: none;
-  }
-  .div1{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-  }
-  .left, .right{
-    width: 45%;
-  }
-  .left input, .right input{
-    height: 40px;
-    margin-top: 5px;
-  }
-  label{
-    font-size: 17px;
-  }
-  .bouton{
-    width: 95%;
-    margin: auto;
-  }
-  .typo{
-    width: 95%;
-    margin: auto;
-  }
-  .choix{
-    border: 1px solid #1e0e5a;
-  }
-  .global1{
-    width: 40%;
-    padding-bottom: 60px;
+.form1 label {
+  color: #1e0e5a;
+  font-weight: bold;
+}
 
-  }
-  #solde{
-    background-color: rgba(105, 104, 104, 0.263);
-    border-radius: 15px;
-    align-items: center;
-    box-shadow: 0px 5px 10px 0px #1e0e5a;
-    width: 35%;
-    height: 350px;
-  }
-  #solde h1 {
-    color: rgb(15, 67, 18);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-  .money{
-    font-size: 70px;
-    color: rgb(13, 13, 69);
-    font-weight: bold;
-    text-shadow: 3px 2px 1px #ffffff;
-    font-family:  Tahoma;
-  }
-  .melo{
-    color: red;
-  }
-  .global2{
-    width: 80%;
-    margin: auto;
-  }
-  .resultats{
-    height: 40px;
-  }
-  .tr1 {
-    height: 35px;
-    align-items: center;
-  }
-  .tr1 th {
-    border-bottom: 2px solid rgb(9, 9, 9);
-  }
-  .bordure{
-    border-bottom: 2px solid rgb(0, 0, 0);
-  }
+.ret {
+  color: red;
+}
 
- button{
-    width: 40px;
-    border: none;
-    height: 38px;
-    border-radius: 5px;
-    background-color: rgb(135, 14, 215);
-    color: white;
-  }
- .bouton2{
+* {
+  font-size: 16px;
+}
+
+.btnr1,
+.btnr2 {
+  width: 100%;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-    font-weight: 500;
-    width: 40px;
-    border: none;
-    background-color: rgb(250, 45, 45);
-    color: #fff;
-    border-radius: 5px;
-    height: 38px;
+  border: none;
+  border-radius: 7px;
+}
 
-    cursor: pointer;
+.barro {
+  width: 300px;
+  height: 45px;
+  background-color: #1f0e5a3d;
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+}
+
+.barro:hover {
+  border: 2px solid #1e0e5a;
+}
+
+.barro input {
+  border: none;
+  width: 88%;
+  background-color: #1f0e5a04;
+}
+
+.barro input:focus {
+  outline: none;
+
+}
+
+.btnr1 {
+  background-color: rgba(13, 13, 69, 0.89);
+  color: #fff;
+}
+
+.btnr2 {
+  background-color: rgb(135, 14, 215);
+  color: #fff;
+}
+
+.rio {
+  width: 100%;
+}
+
+#reponse {
+  color: red;
+}
+
+.kiloo {
+  display: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: red;
+  font-size: 40px;
+}
+
+.cfa {
+  display: none;
+}
+
+.div1 {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.left,
+.right {
+  width: 45%;
+}
+
+.left input,
+.right input {
+  height: 40px;
+  margin-top: 5px;
+}
+
+label {
+  font-size: 17px;
+}
+
+.bouton {
+  width: 95%;
+  margin: auto;
+}
+
+.typo {
+  width: 95%;
+  margin: auto;
+}
+
+.choix {
+  border: 1px solid #1e0e5a;
+}
+
+.global1 {
+  width: 40%;
+  padding-bottom: 60px;
+
+}
+
+#solde {
+  background-color: rgba(105, 104, 104, 0.263);
+  border-radius: 15px;
+  align-items: center;
+  box-shadow: 0px 5px 10px 0px #1e0e5a;
+  width: 35%;
+  height: 350px;
+}
+
+#solde h1 {
+  color: rgb(15, 67, 18);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.money {
+  font-size: 70px;
+  color: rgb(13, 13, 69);
+  font-weight: bold;
+  text-shadow: 3px 2px 1px #ffffff;
+  font-family: Tahoma;
+}
+
+.melo {
+  color: red;
+}
+
+.global2 {
+  width: 80%;
+  margin: auto;
+}
+
+.resultats {
+  height: 40px;
+}
+
+.tr1 {
+  height: 35px;
+  align-items: center;
+}
+
+.tr1 th {
+  border-bottom: 2px solid rgb(9, 9, 9);
+}
+
+.bordure {
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+td button {
+  width: 40px;
+  border: none;
+  height: 38px;
+  border-radius: 5px;
+  background-color: rgba(135, 14, 215, 0.603);
+  color: white;
+}
+
+td .bouton2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  width: 40px;
+  border: none;
+  background-color: rgba(250, 45, 45, 0.68);
+  color: #fff;
+  border-radius: 5px;
+  height: 38px;
+  cursor: pointer;
+}
+td button:hover{
+  width: 43px;
+  background-color: rgb(153, 0, 255);
+}
+td .bouton2:hover{
+  background-color: rgba(243, 3, 3, 0.884);
+}
+
+/* ===============Tableau Media Queries ================*/
+
+@media screen and (max-width:991px) {
+  .rio {
+    width: 86%;
   }
-  /* .sec2{ 
-    overflow: scroll;
-    min-height: 300px;
-  } */
-  
-  /* ===============Tableau Media Queries ================*/
-  
-  @media screen and (max-width:991px) {
-    .rio{
-      width: 86%;
-    }
-    #solde{
-      width: 86%;
-    }
-    .sec2{
-      min-height: 250px;
-    }    .global1{
-      width: 65%;
-    }
+  #solde {
+    width: 86%;
   }
-  
-  @media screen and (max-width:768px) {
-    #solde{
-      width: 88%;
-      margin-left: 30px;
-      margin-bottom: 50px;
-      height: 350px;
-    }
-    .global1{
-      width: 95%;
-    }.global2{
-      width: 95%;
-    }
-    .rio{
-      width: 97%;
-    }
-    .left, .right{
-      width: 95%;
-      margin: auto;
-    }
-    .left input, .right input{
-      margin-bottom: 6px;
-    }
-    .div1{
-      justify-content: center;
-      flex-direction: column;
-    }
+  .sec2 {
+    min-height: 250px;
   }
-  
+  .global1 {
+    width: 65%;
+  }
+}
+
+@media screen and (max-width:768px) {
+  #solde {
+    width: 88%;
+    margin-left: 30px;
+    margin-bottom: 50px;
+    height: 350px;
+  }
+  .global1 {
+    width: 95%;
+  }
+  .global2 {
+    width: 95%;
+  }
+  .rio {
+    width: 97%;
+  }
+  .left,
+  .right {
+    width: 95%;
+    margin: auto;
+  }
+  .left input,
+  .right input {
+    margin-bottom: 6px;
+  }
+  .div1 {
+    justify-content: center;
+    flex-direction: column;
+  }
+}
