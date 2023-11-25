@@ -209,6 +209,7 @@ function genererTableau(utilisateurs) {
   });
 }
 
+
 const boutonPrecedent = document.getElementById('boutonPrecedent');
 const boutonSuivant = document.getElementById('boutonSuivant');
 
@@ -218,6 +219,7 @@ boutonPrecedent.addEventListener('click', () => {
     document.getElementById('pageActuelle').textContent = pageActuelle;
     genererTableau(bidget);
   }
+  toggleBoutons(pageActuelle);
 });
 
 boutonSuivant.addEventListener('click', () => {
@@ -227,7 +229,31 @@ boutonSuivant.addEventListener('click', () => {
     document.getElementById('pageActuelle').textContent = pageActuelle;
     genererTableau(bidget);
   }
+  toggleBoutons(pageActuelle);
 });
+
+// Ajouter cette fonction pour basculer la visibilité des boutons en fonction de la page actuelle
+function toggleBoutons(page) {
+  const totalPages = Math.ceil(bidget.length / elementsParPage);
+
+  // Bouton précédent
+  if (page === 1) {
+    boutonPrecedent.style.display = 'none';
+  } else {
+    boutonPrecedent.style.display = 'block';
+  }
+
+  // Bouton suivant
+  if (page === totalPages) {
+    boutonSuivant.style.display = 'none';
+  } else {
+    boutonSuivant.style.display = 'block';
+  }
+}
+
+// Appeler cette fonction lors de l'initialisation pour configurer initialement la visibilité des boutons
+toggleBoutons(pageActuelle);
+
 
 function init() {
   const rechercher = document.getElementById('rechercher');
@@ -238,7 +264,6 @@ function init() {
   document.getElementById('totalPages').textContent = totalPages;
   genererTableau(bidget);
 }
-
 
 // Fonction pour filtrer les utilisateurs en fonction de la recherche
 function filtrerUtilisateurs(recherche) {
