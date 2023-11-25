@@ -5,10 +5,16 @@
 }
 
 .secto1 {
-  background-color: rgba(86, 85, 83, 0.447);
+  background-color: rgba(86, 85, 83, 0.146);
   margin-bottom: 40px;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
+}
+#smsNom,#smsPrenom, #smsSomme {
+  font-size: 12px; 
+  font-weight: bold;
+  color: red;
+  font-style: italic;
 }
 
 #pageActuelle,

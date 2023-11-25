@@ -19,21 +19,23 @@
 
 <body>
 
-  <section class="secto1 d-md-flex pe-5">
-    <div class="container mb-5 global1">
-      <h1 class=" fs-6 text-center m-3"> GESTION DE BIDGET</h1>
+  <h1 class=" fs-6 text-center m-3"> GESTION DE BIDGET</h1>
+  <section class="secto1 d-md-flex pt-5 pe-5">
+    <div class="container global1">
 
-      <div class=" rio m-auto">
+      <div class=" rio m-auto mt-2">
         <form action="" method="post" id="userForm" class=" form1 py-2">
           <div class="div1">
             <div class="left">
               <label for="prenom">Prenom</label>
               <input required type="text" name="prenom" id="prenom" class="form-control">
+              <small id="smsPrenom"></small>
             </div>
 
             <div class="right">
               <label for="nom">Nom</label>
               <input required type="text" name="nom" id="nom" class="form-control">
+              <small id="smsNom"></small>
             </div>
           </div>
 
@@ -41,7 +43,7 @@
             <div class="left">
               <label for="somme">Somme</label>
               <input required type="number" name="somme" id="somme" class="form-control">
-              <small id="ttt"></small>
+              <small id="smsSomme"></small>
             </div>
 
             <div class="right">
@@ -58,7 +60,7 @@
             </select>
           </div>
 
-          <div class="bouton">
+          <div class="bouton mb-3">
             <button type="submit" id="addUser"></button>
           </div>
         </form>
@@ -66,7 +68,7 @@
     </div>
     <!-- Affichage de la Somme -->
 
-    <div id="solde" class=" me-4 mt-3 d-flex justify-content-center">
+    <div id="solde" class=" me-4 d-flex justify-content-center">
       <div class="">
         <h1 id="h1" class="text-center">Votre Solde est de :</h1>
         <div class="d-flex justify-content-center align-items-center mt-1">

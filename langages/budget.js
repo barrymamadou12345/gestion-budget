@@ -33,6 +33,9 @@
 const userForm = document.querySelector('#userForm');
 const userList = document.querySelector('#userList');
 const addUser = document.querySelector('#addUser');
+const smsPrenom = document.querySelector('#smsPrenom');
+const smsNom = document.querySelector('#smsNom');
+const smsSomme = document.querySelector('#smsSomme');
 let modifUser = "";
 addUser.classList.remove('btnr2');
 addUser.textContent = 'Executer';
@@ -75,30 +78,13 @@ function calcul() {
     if (hey === 'Dépot') {
       argent = parseInt(a.somme)
       SOMME += argent
-    }
-  })
-  let traite = bidget.filter((a) => a.transfert === 'Retrait')
-  let tabRetrait = [0, 0];
-  traite.filter((a) => {
-    tabRetrait.push(parseInt(a.somme))
-  })
-  if (tabRetrait != []) {
-    retire = tabRetrait.reduce((a, b) => a + b)
-    if (SOMME === "") {
-      document.querySelector('#cfa').classList.add('cfa');
-      document.querySelector('#h1').classList.add('cfa');
-    }
-    if (SOMME >= retire) {
+    } if (hey === 'Retrait') {
+      retire = parseInt(a.somme)
       SOMME -= retire;
     }
-    else {
-      document.querySelector('#reponse').textContent = `
-      Impossible de Retirer ${retire} Vore Solde est Insuffisant !`;
-      SOMME = argent;
-      document.querySelector('#kiloo').style.display = 'block';
-    }
-  }
+  })
 };
+
 calcul();
 document.querySelector('#money').textContent = SOMME;
 bidget.forEach(() => {
@@ -106,19 +92,56 @@ bidget.forEach(() => {
   localStorage.setItem('moyen', JSON.stringify(bidget));// localStorage
 });
 
-function saveUser(event) { //Ajouter un utilisateur
+function saveUser(event) {
   event.preventDefault();
   const prenom = document.querySelector("#prenom").value;
   const nom = document.querySelector("#nom").value;
   const somme = document.querySelector("#somme").value;
   const time = document.querySelector("#time").value;
   let transfert = document.querySelector("#transfert").value;
+
+  // Vérifier si la somme est un nombre positif
+  if (isNaN(somme) || somme < 0) {
+    smsSomme.textContent = "La somme doit être un nombre positif.";
+    return;
+  } else {
+    smsSomme.textContent = "";
+  }
+
+  // Vérifier si le prénom et le nom ne contiennent que du texte
+  if (!/^[a-zA-Z]+$/.test(prenom)) {
+    smsPrenom.textContent = "Le prénom ne doit contenir que du texte";
+    return;
+  } else {
+    smsPrenom.textContent = "";
+  }
+  if (!/^[a-zA-Z]+$/.test(nom)) {
+    smsNom.textContent = "Le Nom ne doit contenir que du texte";
+    return;
+  } else {
+    smsNom.textContent = "";
+  }
+
+  // Vérifier si c'est une opération de retrait
+  if (transfert === 'Retrait') {
+    // Convertir la somme en nombre
+    const sommeValue = parseInt(somme);
+
+    // Vérifier si le solde est suffisant
+    if (sommeValue > SOMME) {
+      // Afficher un message d'erreur
+      smsSomme.textContent = `Impossible ! Vérifiez votre solde.`;
+      return; // Sortir de la fonction pour éviter l'ajout de la transaction
+    }
+  }
+
   if (modifUser !== "") {
     bidget[modifUser] = createUser(prenom, nom, somme, time, transfert);
     modifUser = "";
   } else {
     bidget.unshift(createUser(prenom, nom, somme, time, transfert));
   }
+  
   calcul();
   resetForm();
   affichageUser();
@@ -127,6 +150,8 @@ function saveUser(event) { //Ajouter un utilisateur
   addUser.textContent = 'Ajouter';
   addUser.classList.add('btnr1');
 }
+
+
 // Ecouter le Click sur le boutton Ajouter
 userForm.addEventListener("submit", saveUser);
 
